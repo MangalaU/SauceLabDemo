@@ -26,6 +26,28 @@ public class successfulLogin {
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
     WebElement backPackCart;
 
+    @FindBy(xpath = "//a[@class=\"shopping_cart_link\"]")
+    WebElement cart ;
+
+    @FindBy(id = "checkout")
+    WebElement checkout_btn;
+
+    @FindBy(id = "first-name")
+    WebElement firstName;
+
+    @FindBy(id = "last-name")
+    WebElement lastName;
+
+    @FindBy(id = "postal-code")
+    WebElement postalCode;
+
+    @FindBy(id = "continue")
+    WebElement continueBtn;
+
+    @FindBy(xpath = "//h3[contains(text(),'Epic sadface: Username and password do not match any user in this service')]")
+    WebElement errormsg;
+
+
     public void enterUsername(String uname) {
         username.sendKeys(uname);
     }
@@ -42,6 +64,31 @@ public class successfulLogin {
         return backPack;
     }
     public void sauce_back_backpack_cart(){
+        backPackCart.click();
 
     }
+    public void click_cart(){
+        cart.click();
+    }
+    public void click_on_checkout_Btn(){
+        checkout_btn.click();
+
+    }
+    public void enterFirstName(String firstname){
+        firstName.sendKeys(firstname);
+    }
+    public void enterLastName(String lastname){
+        lastName.sendKeys(lastname);
+    }
+    public void enterPostalCode(String postalcode){
+        postalCode.sendKeys(postalcode);
+    }
+    public void clickon_continue(){
+        continueBtn.click();
+    }
+    public WebElement error_msg(){
+        return errormsg;
+    }
 }
+
+
